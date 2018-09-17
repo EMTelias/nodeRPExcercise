@@ -4,7 +4,7 @@ var rp = require('request-promise');
 var options = {
     uri: 'https://api.github.com/users/EMTelias/repos',
     qs: {
-        access_token: 'b2ce525018baba0e46f1b46cbc508bcf44420387'
+        access_token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     },
     headers: {
         'User-Agent': 'Request-Promise'
