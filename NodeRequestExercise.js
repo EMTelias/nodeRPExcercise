@@ -4,7 +4,7 @@ var rp = require('request-promise');
 var options = {
     uri: 'https://api.github.com/users/EMTelias/repos',
     qs: {
-        access_token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+        access_token: 'XXXXXXXXXXXXXXXXXXXXXXXXXX'
     },
     headers: {
         'User-Agent': 'Request-Promise'
@@ -14,17 +14,27 @@ var options = {
 
 rp(options)
     .then(function (repos) {
-        let repoLenght = repos.length;
-        var textNumbers = ['','one ','two ','three '];
-        if(repoLenght == 0){
+
+        let repoLength = repos.length;
+        let textNumbers = ['','is one ','are two ','are three '];
+
+        if( repoLength == 0 ){
+
         	console.log( "No repositories" );
-        } else if(repoLenght > 0 && repoLenght <= 3){
-        	console.log( textNumbers[repoLenght]);
+
+        } else if( repoLength > 0 && repoLength <= 3 ){
+
+        	console.log( "There " + textNumbers[repoLength] + " repositories");
+
         } else {
+
         	console.log( "There are a lot of repositories" );
+
         }
+
     })
     .catch(function (err) {
-        // API call failed...
-        console.log("I cannot connect to the server");
+
+        console.log( "I cannot connect to the server" );
+
     });
